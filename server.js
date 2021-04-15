@@ -1,5 +1,4 @@
 // dependencies
-const e = require('express');
 const express = require('express');
 const mysql = require('mysql2');
 const PORT = process.env.PORT || 3001;
@@ -19,9 +18,7 @@ const db = mysql.createConnection(
         // Your MySQL password
         password: '',
         database: 'election'
-    },
-    console.log('Connected to the election database.')
-);
+    });
 
 // ====================== Routes for Candidates Starts ========================== //
 
@@ -204,7 +201,11 @@ app.use((req, res) => {
     res.status(404).end();
 });
 
-// start Express.js on port 3001
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// Start server after DB connection
+db.connect(err => {
+    if (err) throw err;
+    console.log('Database connected.');
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  });
