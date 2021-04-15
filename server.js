@@ -1,24 +1,13 @@
 // dependencies
 const express = require('express');
-const mysql = require('mysql2');
 const PORT = process.env.PORT || 3001;
 const app = express();
 const inputCheck = require('./utils/inputCheck');
+const db = require('./db/connection');
 
 // Express middleware
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-
-// connect to MySQL database
-const db = mysql.createConnection(
-    {
-        host: 'localhost',
-        // Your MySQL username,
-        user: '',
-        // Your MySQL password
-        password: '',
-        database: 'election'
-    });
 
 // ====================== Routes for Candidates Starts ========================== //
 
