@@ -14,6 +14,7 @@ This project provides a robust back end for a voting application. The back end o
 * [License](#license)
 * [Contributing](#contributing)
 * [Tests](#tests)
+* [Screenshots](#screenshots)
 * [Questions](#questions)
 
 ## Usage
@@ -35,6 +36,21 @@ Please first submit a new "issue" for the change you want to make in this reposi
 
 ## Tests
 Run the following command "node server.js" multiple times in your terminal. Each time select a different option and follow the prompts.
+
+## Screenshots
+Please see below for the examples of how candidates, parties and voters data should be returned in Insomnia Core:
+
+* Candidates
+
+![alt=get-candidates](./utils/images/get-route-candidates.JPG)
+
+* Parties
+
+![alt=get-parties](./utils/images/get-route-parties.JPG)
+
+* Voters
+
+![alt=get-voters](./utils/images/get-route-voters.JPG)
 
 ## Questions
 If you have any questions please use the following two links to contact me:
